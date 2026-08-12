@@ -1,7 +1,8 @@
 ## Student Details
-  Name           :s.varaprasad
-  Register Number:231FA04140
-  Section        :09
+
+- **Name:** S. Varaprasad
+- **Register Number:** 231FA04140
+- **Section:** 09
   
 
 ## Problem Statement
