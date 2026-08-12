@@ -240,6 +240,11 @@ feast apply
 
 Materialization copies offline feature data into the online store.
 
+
+The workflow starts with a student skill dataset, performs feature engineering, stores the features in Parquet format, registers them through Feast, retrieves historical features for Machine Learning, materializes the features into a SQLite online store, and retrieves them for online prediction.
+
+The Logistic Regression model achieved **89.7% accuracy**. Online feature retrieval was successfully demonstrated, and the final prediction for `STU00001` was **Medium Skill Gap**.
+
 ## Results
 
 ### Historical Feature Output
@@ -247,60 +252,40 @@ Materialization copies offline feature data into the online store.
 Example historical feature output:
 
 ```text
-student_id   Programming   Databases   Problem_Solving   Communication
-STU00001     75.5          58.2        57.5              61.8
-STU00002     65.9          57.7        62.7              63.5
-STU00003     77.7          36.3        58.6              65.0
-STU00004     90.8          59.7        68.5              78.2
-STU00005     64.5          76.7        83.8              52.8
+student_id   event_timestamp              Programming   Databases   Problem_Solving   Communication   Cloud_Computing   Teamwork   Aptitude   Data_Analysis   Overall_Skill_Score   Training_Recommendation
+STU00001     2026-01-01 00:00:00+00:00   75.5          58.2        57.5              61.8            64.3              72.2       36.3       76.5           62.79                 Aptitude
+STU00002     2026-01-01 00:00:01+00:00   65.9          57.7        62.7              63.5            63.1              70.2       50.2       88.6           65.24                 Aptitude
+STU00003     2026-01-01 00:00:02+00:00   77.7          36.3        58.6              65.0            41.1              64.4       57.2       66.9           58.40                 Databases
+STU00004     2026-01-01 00:00:03+00:00   90.8          59.7        68.5              78.2            68.4              70.0       68.2       56.7           70.06                 Databases
+STU00005     2026-01-01 00:00:04+00:00   64.5          76.7        83.8              52.8            31.2              76.4       81.4       42.9           63.71                 Cloud_Computing
 ```
+### Historical feature output shape:
 
-Historical feature output shape:
-
-```text
 (5000, 12)
-```
+Model Accuracy
 
-### Model Accuracy
+### The Logistic Regression model achieved:
 
-The Logistic Regression model achieved:
-
-```text
-Accuracy = 89.7%
-```
-
-### Online Feature Output
+Accuracy = 89.70%
+Online Feature Output
 
 For:
 
-```text
 Student ID: STU00001
-```
 
 the retrieved online features include:
 
-```text
-Communication       = 61.8
-Databases           = 58.2
-Teamwork            = 72.2
-Data Analysis       = 76.5
-Cloud Computing     = 64.3
-Overall Skill Score = 62.79
-Programming         = 75.5
-Aptitude            = 36.3
-Problem Solving     = 57.5
-Training Recommendation = Aptitude
-```
-
-### Final Prediction
-
-```text
+Communication            = 61.8
+Databases                = 58.2
+Teamwork                 = 72.2
+Data Analysis            = 76.5
+Cloud Computing          = 64.3
+Overall Skill Score      = 62.79
+Training Recommendation  = Aptitude
+Programming              = 75.5
+Aptitude                 = 36.3
+Problem Solving          = 57.5
+Final Prediction
 Student ID: STU00001
 
 Predicted Skill-Gap Category: Medium
-```
-
-
-The workflow starts with a student skill dataset, performs feature engineering, stores the features in Parquet format, registers them through Feast, retrieves historical features for Machine Learning, materializes the features into a SQLite online store, and retrieves them for online prediction.
-
-The Logistic Regression model achieved **89.7% accuracy**. Online feature retrieval was successfully demonstrated, and the final prediction for `STU00001` was **Medium Skill Gap**.
