@@ -274,7 +274,7 @@ For:
 Student ID: STU00001
 
 the retrieved online features include:
-
+```text
 Communication            = 61.8
 Databases                = 58.2
 Teamwork                 = 72.2
@@ -287,5 +287,5 @@ Aptitude                 = 36.3
 Problem Solving          = 57.5
 Final Prediction
 Student ID: STU00001
-
+```
 Predicted Skill-Gap Category: Medium
