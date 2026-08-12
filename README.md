@@ -1,14 +1,8 @@
-# Curriculum-Industry Skill Feature Store Using Feast
-
-A simple Feast-based feature store for managing CSE student skill data and predicting skill-gap categories using Machine Learning.
-
 ## Student Details
-
-| Field | Details |
-|---|---|
-| **Name** | S. Varaprasad |
-| **Register Number** | 231FA04140 |
-| **Section** | 09 |
+  Name           :s.varaprasad
+  Register Number:231FA04140
+  Section        :09
+  
 
 ## Problem Statement
 
