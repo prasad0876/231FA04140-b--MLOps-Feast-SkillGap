@@ -285,7 +285,8 @@ Training Recommendation  = Aptitude
 Programming              = 75.5
 Aptitude                 = 36.3
 Problem Solving          = 57.5
-Final Prediction
-Student ID: STU00001
+
 ```
+### Final Prediction
+Student ID: STU00001
 Predicted Skill-Gap Category: Medium
